@@ -15,8 +15,8 @@ def main():
         def __init__(self, *args, formula=None, edge_list=None):
             try:
                 self.peakGenerator = iter(IsoSpecPy.IsoLayeredGenerator(formula=formula))
-            except Exception as e:
-                raise e
+            except Exception:
+                raise Exception('Invalid Formula') from None
             self.dist = 0
             self.suma = 0.0
             self.edgeList = edge_list
